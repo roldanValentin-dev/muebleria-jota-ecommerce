@@ -4,8 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=w, initial-scale=1.0">
     <title>Contacto</title>
+
 </head>
 <body>
-    
+      <header>
+        <nav>
+            <a href="index.html">
+                <img src="assets\logo.svg" alt="Logo Hermanos Jota" width="150">
+            </a>
+            <ul> 
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#contacto">Contacto</a></li> 
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div>
+            <form action="submit">
+                <label for="Nombre">Nombre</label>
+                <input type="text" id="Nombre" required>
+
+                <label for="Email">Email</label>
+                <input type="email" name="Email" id="Email" required>
+
+                <label for="mensaje">Mensaje</label>
+                <textarea name="mensaje" id="mensaje" required></textarea>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </main>
+     <footer id="contacto">
+        <section> 
+            <h3>Hermanos Jota — Casa Taller</h3>
+            <address>
+                Av. San Juan 2847<br>
+                C1232AAB — Barrio de San Cristóbal<br>
+                Ciudad Autónoma de Buenos Aires, Argentina
+            </address>
+        </section>
+
+        <section>
+            <h3>Contacto</h3>
+            <ul>
+                <li>Sitio web: <a href="http://www.hermanosjota.com.ar" target="_blank">www.hermanosjota.com.ar</a></li>
+                <li>Email general: <a href="mailto:info@hermanosjota.com.ar">info@hermanosjota.com.ar</a></li>
+                <li>Ventas: <a href="mailto:ventas@hermanosjota.com.ar">ventas@hermanosjota.com.ar</a></li>
+                <li>Instagram: <a href="https://www.instagram.com/hermanosjota_ba" target="_blank">@hermanosjota_ba</a></li>
+                <li>WhatsApp: <a href="https://wa.me/541145678900" target="_blank">+54 11 4567-8900</a></li>
+            </ul>
+        </section>
+    </footer>
+    <script src="js/app.js"></script>
+
 </body>
 </html>
