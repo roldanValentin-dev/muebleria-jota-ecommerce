@@ -1,82 +1,91 @@
-<!--
-Página de Inicio (index.html):
-
-"Necesitamos que, al entrar al sitio, el cliente sienta nuestra calidad y diseño. 
-Debe tener una imagen principal llamativa, nuestro logo, navegación clara y una sección que muestrenuestros productos más populares paracaptar el interés."
-    
-    - Un header con logo y barra de navegación.
-
-    - Una sección principal o "Hero Banner".
-    
-    - Una sección de "Productos Destacados"con 3 o 4 productos cargadosdinámicamente.
-    
-    - Un footer con información básica.
--->
-
-<!DOCTYPE html> <!-- Tipo de documento HTML5 -->
-<html lang="es"> <!-- Idioma principal del sitio -->
-<head>
-    <meta charset="UTF-8"> <!-- Codificación de caracteres -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Diseño responsive -->
-    <title>Hermanos Jota — Mueblería</title> <!-- Título de la pestaña -->
-</head>
-<body> <!-- Cuerpo del sitio -->
-
-    <!-- Encabezado con logo y navegación -->
-    <header>
-        <nav> <!-- Barra de navegación -->
-            <a href="index.html"> <!-- Link al inicio -->
-                <img src="assets\logo.svg" alt="Logo Hermanos Jota" width="150"> <!-- Logo -->
-            </a>
-            <ul> <!-- Lista de enlaces -->
-                <li><a href="#inicio">Inicio</a></li> <!-- Link a sección inicio -->
-                <li><a href="#productos">Productos</a></li> <!-- Link a productos -->
-                <li><a href="#nosotros">Nosotros</a></li> <!-- Link a nosotros -->
-                <li><a href="#contacto">Contacto</a></li> <!-- Link a contacto -->
-            </ul>
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mublería Hermanos Jota</title>
+    <link rel="stylesheet" href="css/inicio.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header class="header-mobile">
+      <div class="header-left">
+        <button class="menu-toggle" aria-label="Abrir menú" id="menuToggle">
+          <span class="hamburger"></span>
+        </button>
+        <nav class="nav-mobile" id="navMobile">
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
         </nav>
+      </div>
+      <div class="header-center">
+        <img
+          src="img/logo/logo-principal.svg"
+          alt="Logo Mublería Hermanos Jota"
+          class="logo-mobile"
+        />
+      </div>
+      <div class="carrito">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span id="contador-carrito">0</span>
+      </div>
     </header>
-
-    <!-- Contenido principal -->
     <main>
-        <!-- Hero Banner -->
-        <section id="inicio" aria-label="Presentación principal"> <!-- Sección hero -->
-            <h1>Hermanos Jota</h1> <!-- Título principal -->
-            <p>Cada pieza cuenta la historia de manos expertas y materiales nobles.</p> <!-- Texto destacado -->
-        </section>
+      <!-- Hero Banner -->
+      <section class="hero">
+        <div class="hero-content">
+          <h1>Muebles artesanales que enamoran</h1>
+          <p>Diseñados para tu hogar, hechos para durar.</p>
+          <a href="productos.html" class="btn-primary">Ver Catálogo</a>
+        </div>
+      </section>
 
-        <!-- Productos destacados -->
-        <section id="productos" aria-label="Productos destacados"> <!-- Sección de productos -->
-            <h2>Productos Destacados</h2> <!-- Subtítulo -->
-            <article class="producto"></article> <!-- Contenedor de producto vacío -->
-            <article class="producto"></article> <!-- Contenedor de producto vacío -->
-            <article class="producto"></article> <!-- Contenedor de producto vacío -->
-            <article class="producto"></article> <!-- Contenedor de producto vacío -->
-        </section>
+      <!-- Productos Destacados -->
+      <section class="productos-destacados">
+        <h2>Productos Destacados</h2>
+        <div class="grid-productos productos-centrados">
+          <article class="producto">
+            <img src="img/productos/Sillas Córdoba.png" alt="Sillas Córdoba" />
+            <h3>Sillas Córdoba</h3>
+            <p class="precio">$15.000</p>
+            <a href="#" class="btn-secondary">Ver más</a>
+          </article>
+          <article class="producto">
+            <img
+              src="img/productos/Mesa Comedor Pampa.png"
+              alt="Mesa Comedor Pampa"
+            />
+            <h3>Mesa Comedor Pampa</h3>
+            <p class="precio">$45.000</p>
+            <a href="#" class="btn-secondary">Ver más</a>
+          </article>
+          <article class="producto">
+            <img src="img/productos/Sofá Patagonia.png" alt="Sofá Patagonia" />
+            <h3>Sofá Patagonia</h3>
+            <p class="precio">$65.000</p>
+            <a href="#" class="btn-secondary">Ver más</a>
+          </article>
+          <article class="producto">
+            <img
+              src="img/productos/Escritorio Costa.png"
+              alt="Escritorio Costa"
+            />
+            <h3>Escritorio Costa</h3>
+            <p class="precio">$20.000</p>
+            <a href="#" class="btn-secondary">Ver más</a>
+          </article>
+        </div>
+      </section>
     </main>
-
-    <!-- Pie de página -->
-    <footer id="contacto">
-        <section> <!-- Datos de dirección -->
-            <h3>Hermanos Jota — Casa Taller</h3> <!-- Nombre y sede -->
-            <address> <!-- Dirección física -->
-                Av. San Juan 2847<br>
-                C1232AAB — Barrio de San Cristóbal<br>
-                Ciudad Autónoma de Buenos Aires, Argentina
-            </address>
-        </section>
-
-        <section> <!-- Datos de contacto -->
-            <h3>Contacto</h3>
-            <ul>
-                <li>Sitio web: <a href="http://www.hermanosjota.com.ar" target="_blank">www.hermanosjota.com.ar</a></li> <!-- Link web -->
-                <li>Email general: <a href="mailto:info@hermanosjota.com.ar">info@hermanosjota.com.ar</a></li> <!-- Email info -->
-                <li>Ventas: <a href="mailto:ventas@hermanosjota.com.ar">ventas@hermanosjota.com.ar</a></li> <!-- Email ventas -->
-                <li>Instagram: <a href="https://www.instagram.com/hermanosjota_ba" target="_blank">@hermanosjota_ba</a></li> <!-- Link Instagram -->
-                <li>WhatsApp: <a href="https://wa.me/541145678900" target="_blank">+54 11 4567-8900</a></li> <!-- Link WhatsApp -->
-            </ul>
-        </section>
+    <footer class="footer-mobile">
+      <p>&copy; 2025 Mublería Hermanos Jota. Todos los derechos reservados.</p>
     </footer>
-
-</body>
+    <script src="js/menu.js"></script>
+  </body>
 </html>
