@@ -1,1 +1,67 @@
 /*Aqui ira css en general para todas las paginas flexbox , box modeling */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/*NO TOCAR import de la fuente!!*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Playfair+Display:wght@400;700&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+h1,
+h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+    /* Bold */
+}
+
+h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 400;
+    /* Regular */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*Aqui la personalizacion de Productos html -----------------------------------------------------------------------------------------*/
+.section-search {
+
+    padding: 1em;
+    width: 100%;
+    text-align: center;
+    border: 1px solid #A0522D;
+}
+
+.page-products {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+}
+
+.products-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
