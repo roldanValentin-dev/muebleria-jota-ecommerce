@@ -4,8 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=w, initial-scale=1.0">
     <title>Contacto</title>
+    <link rel="stylesheet" href="./css/contacto.css">
+
 </head>
 <body>
-    
+      <header>
+        <nav>
+            <a href="index.html">
+                <img src="assets\logo.svg" alt="Logo Hermanos Jota" width="150">
+            </a>
+            <ul> 
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#contacto">Contacto</a></li> 
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Contactate con nosotros</h1>
+        <div class="content-form">
+            <form action="submit" class="form">
+                <input type="text" id="Nombre" required placeholder="Nombre">
+
+                <input type="email" name="Email" id="Email" required placeholder="Email">
+
+                <textarea name="mensaje" id="mensaje" required placeholder="Mensaje" rows="6" cols="50"></textarea>
+
+                <button type="submit" id="btn-form">Enviar</button>
+            </form>
+        </div>
+    </main>
+     <footer id="contacto">
+        <section> 
+            <h3>Hermanos Jota — Casa Taller</h3>
+            <address>
+                Av. San Juan 2847<br>
+                C1232AAB — Barrio de San Cristóbal<br>
+                Ciudad Autónoma de Buenos Aires, Argentina
+            </address>
+        </section>
+
+        <section>
+            <h3>Contacto</h3>
+            <ul>
+                <li>Sitio web: <a href="http://www.hermanosjota.com.ar" target="_blank">www.hermanosjota.com.ar</a></li>
+                <li>Email general: <a href="mailto:info@hermanosjota.com.ar">info@hermanosjota.com.ar</a></li>
+                <li>Ventas: <a href="mailto:ventas@hermanosjota.com.ar">ventas@hermanosjota.com.ar</a></li>
+                <li>Instagram: <a href="https://www.instagram.com/hermanosjota_ba" target="_blank">@hermanosjota_ba</a></li>
+                <li>WhatsApp: <a href="https://wa.me/541145678900" target="_blank">+54 11 4567-8900</a></li>
+            </ul>
+        </section>
+    </footer>
+    <script src="js/contacto.js"></script>
+
 </body>
 </html>
