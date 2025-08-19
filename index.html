@@ -1,11 +1,82 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bienvenidos Muebleria Hermanos Jota</title>
-</head>
-<body>
+<!--
+Página de Inicio (index.html):
+
+"Necesitamos que, al entrar al sitio, el cliente sienta nuestra calidad y diseño. 
+Debe tener una imagen principal llamativa, nuestro logo, navegación clara y una sección que muestrenuestros productos más populares paracaptar el interés."
     
+    - Un header con logo y barra de navegación.
+
+    - Una sección principal o "Hero Banner".
+    
+    - Una sección de "Productos Destacados"con 3 o 4 productos cargadosdinámicamente.
+    
+    - Un footer con información básica.
+-->
+
+<!DOCTYPE html> <!-- Tipo de documento HTML5 -->
+<html lang="es"> <!-- Idioma principal del sitio -->
+<head>
+    <meta charset="UTF-8"> <!-- Codificación de caracteres -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Diseño responsive -->
+    <title>Hermanos Jota — Mueblería</title> <!-- Título de la pestaña -->
+</head>
+<body> <!-- Cuerpo del sitio -->
+
+    <!-- Encabezado con logo y navegación -->
+    <header>
+        <nav> <!-- Barra de navegación -->
+            <a href="index.html"> <!-- Link al inicio -->
+                <img src="assets\logo.svg" alt="Logo Hermanos Jota" width="150"> <!-- Logo -->
+            </a>
+            <ul> <!-- Lista de enlaces -->
+                <li><a href="#inicio">Inicio</a></li> <!-- Link a sección inicio -->
+                <li><a href="#productos">Productos</a></li> <!-- Link a productos -->
+                <li><a href="#nosotros">Nosotros</a></li> <!-- Link a nosotros -->
+                <li><a href="#contacto">Contacto</a></li> <!-- Link a contacto -->
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Contenido principal -->
+    <main>
+        <!-- Hero Banner -->
+        <section id="inicio" aria-label="Presentación principal"> <!-- Sección hero -->
+            <h1>Hermanos Jota</h1> <!-- Título principal -->
+            <p>Cada pieza cuenta la historia de manos expertas y materiales nobles.</p> <!-- Texto destacado -->
+        </section>
+
+        <!-- Productos destacados -->
+        <section id="productos" aria-label="Productos destacados"> <!-- Sección de productos -->
+            <h2>Productos Destacados</h2> <!-- Subtítulo -->
+            <article class="producto"></article> <!-- Contenedor de producto vacío -->
+            <article class="producto"></article> <!-- Contenedor de producto vacío -->
+            <article class="producto"></article> <!-- Contenedor de producto vacío -->
+            <article class="producto"></article> <!-- Contenedor de producto vacío -->
+        </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer id="contacto">
+        <section> <!-- Datos de dirección -->
+            <h3>Hermanos Jota — Casa Taller</h3> <!-- Nombre y sede -->
+            <address> <!-- Dirección física -->
+                Av. San Juan 2847<br>
+                C1232AAB — Barrio de San Cristóbal<br>
+                Ciudad Autónoma de Buenos Aires, Argentina
+            </address>
+        </section>
+
+        <section> <!-- Datos de contacto -->
+            <h3>Contacto</h3>
+            <ul>
+                <li>Sitio web: <a href="http://www.hermanosjota.com.ar" target="_blank">www.hermanosjota.com.ar</a></li> <!-- Link web -->
+                <li>Email general: <a href="mailto:info@hermanosjota.com.ar">info@hermanosjota.com.ar</a></li> <!-- Email info -->
+                <li>Ventas: <a href="mailto:ventas@hermanosjota.com.ar">ventas@hermanosjota.com.ar</a></li> <!-- Email ventas -->
+                <li>Instagram: <a href="https://www.instagram.com/hermanosjota_ba" target="_blank">@hermanosjota_ba</a></li> <!-- Link Instagram -->
+                <li>WhatsApp: <a href="https://wa.me/541145678900" target="_blank">+54 11 4567-8900</a></li> <!-- Link WhatsApp -->
+            </ul>
+        </section>
+    </footer>
+
 </body>
 </html>
