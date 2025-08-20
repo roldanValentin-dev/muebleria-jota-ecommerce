@@ -241,15 +241,78 @@ main {
 
 /* Footer mejorado en mobile */
 .footer-mobile {
-  padding: 1.5rem 0.5rem 2.5rem 0.5rem;
-  text-align: center;
-  font-size: 1rem;
-  background: var(--verde-salvia);
+  width: 100vw;
+  background: #87a96b;
   color: white;
+  font-size: 1rem;
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
   box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.08);
-  position: relative;
+  margin-top: 2rem;
+  position: static;
+  padding: 0;
+}
+.footer-bar {
+  width: 100%;
+  background: #87a96b;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 1rem;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.08);
+}
+.footer-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 900px;
+  margin: 2rem auto 0 auto;
+  padding: 2rem 1.5rem;
+  background: #7ca16b;
+  border-radius: 12px;
+  color: #fff;
+}
+@media (min-width: 700px) {
+  .footer-info {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 2.5rem 2rem;
+  }
+  .footer-info > div {
+    flex: 1;
+    min-width: 220px;
+  }
+}
+.footer-info .footer-direccion {
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+.footer-info .footer-contacto {
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+.footer-info strong {
+  font-size: 1.1em;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+.footer-info a {
+  color: #fff;
+  text-decoration: underline;
+  word-break: break-all;
+}
+.footer-info a:hover {
+  color: #d4a437;
+}
+.footer-info span {
+  display: block;
+  margin-top: 1.5rem;
+  font-size: 0.95em;
+  color: #e6e6e6;
 }
 
 @media (min-width: 600px) {
@@ -285,13 +348,10 @@ main {
     font-size: 1.1rem;
     border-radius: 0;
     box-shadow: none;
-    position: fixed;
+    position: static;
     left: 0;
     bottom: 0;
-    width: 100vw;
+    width: 100%;
     z-index: 100;
-  }
-  main {
-    padding-bottom: 3.5rem;
   }
 }
