@@ -1,29 +1,48 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=w, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contacto</title>
     <link rel="stylesheet" href="./css/contacto.css">
+    <link rel="stylesheet" href="css/inicio.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
 
 </head>
+
 <body>
-      <header>
-        <nav>
-            <a href="index.html">
-                <img src="assets\logo.svg" alt="Logo Hermanos Jota" width="150">
-            </a>
-            <ul> 
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="#productos">Productos</a></li>
-                <li><a href="#nosotros">Nosotros</a></li>
-                <li><a href="#contacto">Contacto</a></li> 
-            </ul>
+    <body>
+    <header class="header-mobile">
+      <div class="header-left">
+        <button class="menu-toggle" aria-label="Abrir menú" id="menuToggle">
+          <span class="hamburger"></span>
+        </button>
+        <nav class="nav-mobile" id="navMobile">
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
         </nav>
+      </div>
+      <div class="header-center">
+        <img
+          src="assets/logo.svg"
+          alt="Logo Mublería Hermanos Jota"
+          class="logo-mobile"
+        />
+      </div>
+      <div class="carrito">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span id="contador-carrito">0</span>
+      </div>
     </header>
     <main>
-        <h1>Contactate con nosotros</h1>
         <div class="content-form">
+            <h1>Contactate con nosotros</h1>
             <form action="submit" class="form">
                 <input type="text" id="Nombre" required placeholder="Nombre">
 
@@ -35,28 +54,49 @@
             </form>
         </div>
     </main>
-     <footer id="contacto">
-        <section> 
-            <h3>Hermanos Jota — Casa Taller</h3>
-            <address>
-                Av. San Juan 2847<br>
-                C1232AAB — Barrio de San Cristóbal<br>
-                Ciudad Autónoma de Buenos Aires, Argentina
-            </address>
-        </section>
-
-        <section>
-            <h3>Contacto</h3>
-            <ul>
-                <li>Sitio web: <a href="http://www.hermanosjota.com.ar" target="_blank">www.hermanosjota.com.ar</a></li>
-                <li>Email general: <a href="mailto:info@hermanosjota.com.ar">info@hermanosjota.com.ar</a></li>
-                <li>Ventas: <a href="mailto:ventas@hermanosjota.com.ar">ventas@hermanosjota.com.ar</a></li>
-                <li>Instagram: <a href="https://www.instagram.com/hermanosjota_ba" target="_blank">@hermanosjota_ba</a></li>
-                <li>WhatsApp: <a href="https://wa.me/541145678900" target="_blank">+54 11 4567-8900</a></li>
-            </ul>
-        </section>
+      <footer class="footer-mobile">
+      <div class="footer-bar">
+        &copy; 2025 Mublería Hermanos Jota. Todos los derechos reservados.
+      </div>
+      <div class="footer-info">
+        <div class="footer-direccion">
+          <strong>Hermanos Jota — Casa Taller</strong><br />
+          Av. San Juan 2847<br />
+          C1232AAB — Barrio de San Cristóbal<br />
+          Ciudad Autónoma de Buenos Aires<br />
+          Argentina<br />
+          <br />
+          <strong>Horarios:</strong><br />
+          Lunes a Viernes: 10:00 - 19:00<br />
+          Sábados: 10:00 - 14:00<br />
+        </div>
+        <div class="footer-contacto">
+          <strong>Contacto</strong><br />
+          Sitio web:
+          <a href="https://www.hermanosjota.com.ar" target="_blank"
+            >www.hermanosjota.com.ar</a
+          ><br />
+          Email general:
+          <a href="mailto:info@hermanosjota.com.ar">info@hermanosjota.com.ar</a
+          ><br />
+          Ventas:
+          <a href="mailto:ventas@hermanosjota.com.ar"
+            >ventas@hermanosjota.com.ar</a
+          ><br />
+          Instagram:
+          <a href="https://instagram.com/hermanosjota_ba" target="_blank"
+            >@hermanosjota_ba</a
+          ><br />
+          WhatsApp:
+          <a href="https://wa.me/541145678900" target="_blank"
+            >+54 11 4567-8900</a
+          ><br />
+        </div>
+      </div>
     </footer>
+    <script src="js/menu.js"></script>
     <script src="js/contacto.js"></script>
 
 </body>
+
 </html>
