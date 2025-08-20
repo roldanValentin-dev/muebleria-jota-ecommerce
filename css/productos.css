@@ -1,0 +1,308 @@
+/*Aqui ira css en general para todas las paginas flexbox , box modeling */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/*NO TOCAR import de la fuente!!*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Playfair+Display:wght@400;700&display=swap');
+
+:root {
+    /* Colores de la paleta */
+    --siena-tostado: #a0522d;
+    --verde-salvia: #87a96b;
+    --alabastro-calido: #f5e6d3;
+    --vara-de-oro: #d4a437;
+    --rosa-polvoriento: #c47a6d;
+
+    /* Tipografías */
+    --font-primary: "Inter", sans-serif;
+    --font-secondary: "Playfair Display", serif;
+}
+
+
+
+body {
+    font-family: --font-primary;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+h1,
+h2 {
+    font-family: --font-secondary;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+    /* Bold */
+}
+
+h3 {
+    font-family: --font-secondary;
+    font-weight: 400;
+    /* Regular */
+}
+
+
+
+
+/*Estilo del header -------------------*/
+/* Layout Base */
+header,
+nav {
+    background-color: var(--verde-salvia);
+    color: white;
+}
+
+header {
+    padding: 0.7rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.logo-mobile {
+    width: 80px;
+    height: auto;
+}
+
+.menu-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    z-index: 1001;
+}
+
+.hamburger {
+    width: 35px;
+    height: 3px;
+    background: white;
+    position: relative;
+    border-radius: 2px;
+    transition: all 0.3s;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 35px;
+    height: 3px;
+    background: white;
+    border-radius: 2px;
+    transition: all 0.3s;
+}
+
+.hamburger::before {
+    top: -8px;
+}
+
+.hamburger::after {
+    top: 8px;
+}
+
+.menu-toggle.active .hamburger {
+    background: transparent;
+}
+
+.menu-toggle.active .hamburger::before {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.active .hamburger::after {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.nav-mobile {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--verde-salvia);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+    z-index: 1000;
+}
+
+.nav-mobile ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    list-style: none;
+    padding: 1.5rem 0;
+}
+
+.nav-mobile li {
+    width: 10%;
+}
+
+.nav-mobile a {
+    width: 100%;
+    padding: 0.5em;
+    color: white;
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-family: var(--font-primary);
+    transition: color 0.3s;
+}
+
+.nav-mobile a:hover {
+    color: var(--vara-de-oro);
+}
+
+.nav-mobile.active {
+    max-height: 300px;
+}
+
+#contador-carrito {
+    background-color: var(--vara-de-oro);
+    padding: 0.2rem 0.5rem;
+    border-radius: 50%;
+}
+
+/*CSS del footer*/
+
+footer {
+    background-color: var(--verde-salvia);
+    color: var(--alabastro-calido);
+    margin-top: 100px;
+    padding: 3em;
+    font-family: var(--font-primary);
+    font-size: 1.3rem;
+    gap: 20px;
+}
+
+.footer-info {
+    padding: 1em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    border-radius: 22px;
+}
+
+.footer-direccion,
+.footer-contacto {
+    width: 100%;
+   box-shadow: 0px 10px 10px #728f5a;
+   border-radius: 11px;
+    padding: 2em;
+    text-align: center;
+}
+
+.footer-direccion ul,
+.footer-contacto ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-contacto a {
+    color: var(--alabastro-calido);
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    /* Transición para todas las propiedades */
+}
+
+.footer-contacto a:hover {
+    background-color: #728f5a;
+    padding: 0.5em;
+    border-radius: 22px;
+    color: var(--vara-de-oro);
+}
+.footer-bar{
+    padding: 1em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+/*falta terminar */
+@media (max-width: 768px){
+    .footer-info{
+        display: flex;
+        flex-direction: column;
+    }
+}
+/*Aqui la personalizacion de Productos html -----------------------------------------------------------------------------------------*/
+.section-search {
+
+    padding: 1em;
+    width: 100%;
+    text-align: center;
+    border: 1px solid --siena-tostado;
+}
+
+.page-products {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+}
+
+.products-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.h1-general {
+    background-color: #F5E6D3;
+    text-align: center;
+    width: 100%;
+    padding: 1em;
+    color: #A0522D;
+}
+
+
+
+
+
+/*input de busqueda*/
+.search-input {
+    width: 60%;
+    padding: 1em;
+    border-radius: 22px;
+    border: 2px solid #A0522D;
+
+}
+
+/*ESTILO de las cards de productos.html*/
+.product-card__link {
+    text-decoration: none;
+    color: black;
+}
+
+.product-card {
+    background-color: #F5E6D3;
+    width: 100%;
+    max-width: 240px;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 8px;
+    transition: transform 0.10s;
+
+}
+
+/*Efecto hover*/
+.product-card:hover {
+    transform: translateY(-7px);
+}
+
+/*imagen*/
+.product-card__image {
+    width: 100%;
+    height: auto;
+}

@@ -4,26 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/components.css">
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/productos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
     <title>Productos</title>
 </head>
 
 <body>
-
-    <header>
-        <nav> <!-- Barra de navegación -->
-            <a href="index.html"> <!-- Link al inicio -->
-                <img src="assets/logo.svg" alt="Logo Hermanos Jota" width="150"> <!-- Logo -->
-            </a>
-            <ul> <!-- Lista de enlaces -->
-                <li><a href="index.html">Inicio</a></li> <!-- Link a sección inicio -->
-                <li><a href="productos.html">Productos</a></li> <!-- Link a productos -->
-                <li><a href="producto.html">Nosotros</a></li> <!-- Link a nosotros -->
-                <li><a href="contacto.html">Contacto</a></li> <!-- Link a contacto -->
-            </ul>
-        </nav>
+    <header class="header-mobile">
+        <div class="header-left">
+            <button class="menu-toggle" aria-label="Abrir menú" id="menuToggle">
+                <span class="hamburger"></span>
+            </button>
+            <nav class="nav-mobile" id="navMobile">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="header-center">
+            <img src="assets/logo.svg" alt="Logo Mublería Hermanos Jota" class="logo-mobile" />
+        </div>
+        <div class="carrito">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span id="contador-carrito">0</span>
+        </div>
     </header>
 
     <main>
@@ -41,7 +47,7 @@
                 <!--Producto-->
                 <article class="product-card">
                     <a href="producto.html" class="product-card__link">
-                        <img src="assets/productos/Aparador Uspallata.png" alt="Aparador Uspallata"
+                        <img src="./assets/productos/Aparador Uspallata.png" alt="Aparador Uspallata"
                             class="product-card__image">
                         <h3 class="product-card__title">Aparador Uspallata</h3>
                         <p class="product-card__price">$00.00</p>
@@ -50,7 +56,7 @@
                 <!--Producto-->
                 <article class="product-card">
                     <a href="producto.html" class="product-card__link">
-                        <img src="assets/productos/Biblioteca Recoleta.png" alt="Biblioteca Recoleta"
+                        <img src="./assets/productos/Biblioteca Recoleta.png" alt="Biblioteca Recoleta"
                             class="product-card__image">
                         <h3 class="product-card__title">Biblioteca Recoleta</h3>
                         <p class="product-card__price">$00.00</p>
@@ -59,7 +65,7 @@
                 <!--Producto-->
                 <article class="product-card">
                     <a href="producto.html" class="product-card__link">
-                        <img src="assets/productos/Butaca Mendoza.png" alt="Butaca Mendoza"
+                        <img src="./assets/productos/Butaca Mendoza.png" alt="Butaca Mendoza"
                             class="product-card__image">
                         <h3 class="product-card__title">Butaca Mendoza</h3>
                         <p class="product-card__price">$00.00</p>
@@ -68,7 +74,7 @@
                 <!--Producto-->
                 <article class="product-card">
                     <a href="producto.html" class="product-card__link">
-                        <img src="assets/productos/Mesa de Centro Araucaria.png" alt="Mesa de Centro Araucaria"
+                        <img src="./assets/productos/Mesa de Centro Araucaria.png" alt="Mesa de Centro Araucaria"
                             class="product-card__image">
                         <h3 class="product-card__title">Mesa de centro Aaraucaria</h3>
                         <p class="product-card__price">$00.00</p>
@@ -77,7 +83,7 @@
                 <!--Producto-->
                 <article class="product-card">
                     <a href="producto.html" class="product-card__link">
-                        <img src="assets/productos/Mesa de Noche Aconcagua.png" alt="Mesa de noche Aconcagua"
+                        <img src="./assets/productos/Mesa de Noche Aconcagua.png" alt="Mesa de noche Aconcagua"
                             class="product-card__image">
                         <h3 class="product-card__title">Mesa de noche Aconcagua</h3>
                         <p class="product-card__price">$00.00</p>
@@ -86,7 +92,7 @@
                 <!--Producto-->
                 <article class="product-card">
                     <a href="producto.html" class="product-card__link">
-                        <img src="assets/productos/Sofá Patagonia.png" alt="Sofá Patagonia"
+                        <img src="./assets/productos/Sofá Patagonia.png" alt="Sofá Patagonia"
                             class="product-card__image">
                         <h3 class="product-card__title">Sofa Patagonia</h3>
                         <p class="product-card__price">$00.00</p>
@@ -95,7 +101,7 @@
                 <!--Producto-->
                 <article class="product-card">
                     <a href="producto.html" class="product-card__link">
-                        <img src="assets/productos/Mesa Comedor Pampa.png" alt="Mesa comedor Pampa"
+                        <img src="./assets/productos/Mesa Comedor Pampa.png" alt="Mesa comedor Pampa"
                             class="product-card__image">
                         <h3 class="product-card__title">Mesa comedor Pampa</h3>
                         <p class="product-card__price">$00.00</p>
@@ -104,7 +110,7 @@
                 <!--Producto-->
                 <article class="product-card">
                     <a href="producto.html" class="product-card__link">
-                        <img src="assets/productos/Sillas Córdoba.png" alt="Sillas Cordoba"
+                        <img src="./assets/productos/Sillas Córdoba.png" alt="Sillas Cordoba"
                             class="product-card__image">
                         <h3 class="product-card__title">Sillas Córdoba</h3>
                         <p class="product-card__price">$00.00</p>
@@ -122,43 +128,55 @@
                 <!--Producto-->
                 <article class="product-card">
                     <a href="producto.html" class="product-card__link">
-                        <img src="assets/productos/Silla de Trabajo Belgrano.png" alt="Escritorio Costa"
+                        <img src="./assets/productos/Silla de Trabajo Belgrano.png" alt="Escritorio Costa"
                             class="product-card__image">
                         <h3 class="product-card__title">Escritorio Costa</h3>
                         <p class="product-card__price">$00.00</p>
                     </a>
+
                 </article>
 
             </section>
         </div>
     </main>
 
-    <footer id="contacto">
-        <section> <!-- Datos de dirección -->
-            <h3>Hermanos Jota — Casa Taller</h3> <!-- Nombre y sede -->
-            <address> <!-- Dirección física -->
-                Av. San Juan 2847<br>
-                C1232AAB — Barrio de San Cristóbal<br>
-                Ciudad Autónoma de Buenos Aires, Argentina
-            </address>
-        </section>
-
-        <section> <!-- Datos de contacto -->
-            <h3>Contacto</h3>
-            <ul>
-                <li>Sitio web: <a href="http://www.hermanosjota.com.ar" target="_blank">www.hermanosjota.com.ar</a></li>
-                <!-- Link web -->
-                <li>Email general: <a href="mailto:info@hermanosjota.com.ar">info@hermanosjota.com.ar</a></li>
-                <!-- Email info -->
-                <li>Ventas: <a href="mailto:ventas@hermanosjota.com.ar">ventas@hermanosjota.com.ar</a></li>
-                <!-- Email ventas -->
-                <li>Instagram: <a href="https://www.instagram.com/hermanosjota_ba" target="_blank">@hermanosjota_ba</a>
-                </li> <!-- Link Instagram -->
-                <li>WhatsApp: <a href="https://wa.me/541145678900" target="_blank">+54 11 4567-8900</a></li>
-                <!-- Link WhatsApp -->
-            </ul>
-        </section>
+    <footer>
+        <div class="footer-info">
+            <div class="footer-direccion">
+                <h4>Hermanos Jota — Casa Taller</h4>
+                <address>
+                    Av. San Juan 2847<br>
+                    C1232AAB — Barrio de San Cristóbal<br>
+                    Ciudad Autónoma de Buenos Aires<br>
+                    Argentina
+                </address>
+                <p><strong>Horarios:</strong></p>
+                <ul>
+                    <li>Lunes a Viernes: 10:00 - 19:00</li>
+                    <li>Sábados: 10:00 - 14:00</li>
+                </ul>
+            </div>
+            <div class="footer-contacto">
+                <h4>Contacto</h4>
+                <ul>
+                    <li>Sitio web: <a href="https://www.hermanosjota.com.ar" target="_blank">www.hermanosjota.com.ar</a>
+                    </li>
+                    <li>Email general: <a href="mailto:info@hermanosjota.com.ar">info@hermanosjota.com.ar</a></li>
+                    <li>Ventas: <a href="mailto:ventas@hermanosjota.com.ar">ventas@hermanosjota.com.ar</a></li>
+                    <li>Instagram: <a href="https://instagram.com/hermanosjota_ba" target="_blank">@hermanosjota_ba</a>
+                    </li>
+                    <li>WhatsApp: <a href="https://wa.me/541145678900" target="_blank">+54 11 4567-8900</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bar">
+            &copy; 2025 Mublería Hermanos Jota. Todos los derechos reservados.
+            <figure>
+                <img src="./assets/logo.svg" alt="Logo de Muebleria jota" class="logo-mobile">
+            </figure>
+        </div>
     </footer>
+    <script src="js/menu.js"></script>
 </body>
 
 </html>
