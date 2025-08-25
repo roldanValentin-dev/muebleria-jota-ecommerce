@@ -4,8 +4,111 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalle Producto</title>
+    
+    <link rel="stylesheet" href="css/productos.css">
+    <link rel="stylesheet" href="css/producto_detatlle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+
 </head>
 <body>
-    
+   <header class="header-mobile">
+        <div class="header-left">
+            <button class="menu-toggle" aria-label="Abrir menú" id="menuToggle">
+                <span class="hamburger"></span>
+            </button>
+            <nav class="nav-mobile" id="navMobile">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="header-center">
+            <img src="assets/logo.svg" alt="Logo Mublería Hermanos Jota" class="logo-mobile" />
+        </div>
+        <div class="carrito">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span id="contador-carrito">0</span>
+        </div>
+    </header>
+
+    <main>
+        <section class="product-detail">
+            <div class="product-image">
+                <img src="./assets/productos/Biblioteca Recoleta.png" alt="imagen del producto">
+            </div>
+
+            <div class="product-info">
+                <h1 class="product-title">Biblioteca Recoleta</h1>
+                <p>Sistema modular de estantes abierto que combina estructura de acero Sage Green y repisas en roble claro. 
+                    Perfecta para colecciones y objetos de diseño, su diseño versátil se adapta a cualquier espacio contemporáneo con elegancia funcional.
+                </p>
+                <ul class="product-specs">
+                    <li>
+                        <span class="label">Medidas</span>
+                        <span class="value">100 × 35 × 200 cm</span>
+                    </li>
+                    <li>
+                        <span class="label">Materiales</span>
+                        <span class="value">Estructura de acero, estantes de roble</span>
+                    </li>
+                    <li>
+                        <span class="label">Acabado</span>
+                        <span class="value">Laca mate ecológica</span>
+                    </li>
+                    <li>
+                        <span class="label">Capacidad</span>
+                        <span class="value">45 kg por estante</span>
+                    </li>
+                    <li>
+                        <span class="label">Modulares</span>
+                        <span class="value">5 estantes ajustables</span>
+                    </li>
+                </ul>
+
+                <p class="price">$ 18.900</p>
+                <button class="add-to-cart">Agregar al carrito</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-info">
+            <div class="footer-direccion">
+                <h4>Hermanos Jota — Casa Taller</h4>
+                <address>
+                    Av. San Juan 2847<br>
+                    C1232AAB — Barrio de San Cristóbal<br>
+                    Ciudad Autónoma de Buenos Aires<br>
+                    Argentina
+                </address>
+                <h4>Horarios</h4>
+                <ul>
+                    <li>Lunes a Viernes: 10:00 - 19:00</li>
+                    <li>Sábados: 10:00 - 14:00</li>
+                </ul>
+            </div>
+            <div class="footer-contacto">
+                <h4>Contacto</h4>
+                <ul>
+                    <li>Sitio web: <a href="https://www.hermanosjota.com.ar" target="_blank">www.hermanosjota.com.ar</a>
+                    </li>
+                    <li>Email general: <a href="mailto:info@hermanosjota.com.ar">info@hermanosjota.com.ar</a></li>
+                    <li>Ventas: <a href="mailto:ventas@hermanosjota.com.ar">ventas@hermanosjota.com.ar</a></li>
+                    <li>Instagram: <a href="https://instagram.com/hermanosjota_ba" target="_blank">@hermanosjota_ba</a>
+                    </li>
+                    <li>WhatsApp: <a href="https://wa.me/541145678900" target="_blank">+54 11 4567-8900</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bar">
+            <figure>
+                <img src="./assets/logo.svg" alt="Logo de Muebleria jota" class="logo-mobile">
+            </figure>
+            <p>&copy;2025 Hermanos Jota inc.</p> 
+        </div>
+    </footer>
+    <script src="js/menu.js"></script>
 </body>
 </html>
