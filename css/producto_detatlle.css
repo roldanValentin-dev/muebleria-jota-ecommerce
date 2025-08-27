@@ -1,0 +1,159 @@
+:root {
+  --siena-tostado: #A0522D;
+  --verde-salvia: #87A96B;
+  --alabastro: #F5E6D3;
+  --vara-oro: #D4A437;
+  --rosa-polvoriento: #C47A6D;
+}
+
+body {
+  font-family:'Inter', sans-serif;
+  background-color: var(--alabastro);
+  color: #333;
+}
+
+main {
+  max-width: 92%;
+  margin: auto;
+  padding: 10px;
+}
+
+.product-detail {
+  display: flex;
+  gap: 30px;
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Imagen */
+.product-image img {
+  width: 100%;
+  max-width: 540px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* Info */
+.product-info {
+  flex: 1;
+}
+
+.product-title {
+    font-size: 48px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight:bold;
+    color: var(--siena-tostado);
+    margin-bottom: 15px;
+}
+
+.product-info p {
+    font-weight: 400;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+/* 📋 Especificaciones estilo tabla */
+.product-specs {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #eee;
+}
+
+.product-specs li {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  border-bottom: 1px solid #eee;
+}
+
+.product-specs li:last-child {
+  border-bottom: none;
+}
+
+.product-specs .label {    
+    background-color: var(--alabastro);
+    color: var(--siena-tostado);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 400;
+    text-transform: uppercase; /* etiquetas en mayúsculas */
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-right: 1px solid #eee;
+}
+
+.product-specs .value {
+    font-weight: 300;
+    font-size: 14px;
+    background-color: #fff;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.price {
+    font-size: 32px !important;
+    font-weight: bold;
+    color: var(--vara-oro);
+    margin: 20px 0;
+}
+
+
+.add-to-cart {
+    font-weight: 500;
+    background: var(--siena-tostado);
+    color: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.add-to-cart:hover {
+    background: var(--rosa-polvoriento);
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {  
+    .product-detail {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+    }
+
+    .product-image img {
+        max-width: 100%;
+    }
+
+    .product-info {
+        text-align: center;
+    }
+
+    .product-specs li {
+        grid-template-columns: 1fr; /* en móvil las specs se apilan */
+    }
+
+    .product-specs .label {
+        border-right: none;
+        border-bottom: 1px solid #eee;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .product-specs .value {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .add-to-cart {
+        width: 100%;
+        max-width: 300px;
+    }
+}
