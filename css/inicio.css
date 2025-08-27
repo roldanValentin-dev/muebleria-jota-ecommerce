@@ -25,6 +25,7 @@ body {
   background-color: var(--alabastro-calido);
   color: #333;
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 /* Layout Base */
@@ -58,7 +59,7 @@ header {
 }
 
 .hamburger {
-  width: 28px;
+  width: 35px;
   height: 3px;
   background: white;
   position: relative;
@@ -70,7 +71,7 @@ header {
   content: "";
   position: absolute;
   left: 0;
-  width: 28px;
+  width: 35px;
   height: 3px;
   background: white;
   border-radius: 2px;
@@ -97,31 +98,44 @@ header {
   position: absolute;
   top: 100%;
   left: 0;
-  width: 100vw;
+  width: 100%;
   background: var(--verde-salvia);
-  display: none;
-  flex-direction: column;
-  align-items: center;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out;
   z-index: 1000;
 }
+
 .nav-mobile ul {
-  flex-direction: column;
-  gap: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
   list-style: none;
   padding: 1.5rem 0;
 }
+
+.nav-mobile li {
+  width: 10%;
+}
+
 .nav-mobile a {
+  width: 100%;
+  padding: 0.5em;
   color: white;
   font-weight: 500;
   text-decoration: none;
   font-size: 1.3rem;
+  font-family: var(--font-primary);
   transition: color 0.3s;
 }
+
 .nav-mobile a:hover {
   color: var(--vara-de-oro);
 }
+
 .nav-mobile.active {
-  display: flex;
+  max-height: 300px;
 }
 
 #contador-carrito {
@@ -274,6 +288,7 @@ main {
   border-radius: 12px;
   color: #fff;
 }
+
 @media (min-width: 700px) {
   .footer-info {
     flex-direction: row;
@@ -315,15 +330,114 @@ main {
   color: #e6e6e6;
 }
 
+/* Hero Banner Styles */
+.hero-banner {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--alabastro-calido);
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.hero-banner__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  gap: 2rem;
+}
+.hero-banner__img {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero-banner__img img {
+  width: 100%;
+  max-width: 320px;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(160, 82, 45, 0.1);
+}
+.hero-banner__content {
+  text-align: center;
+}
+.hero-banner__title {
+  font-family: var(--font-secondary);
+  font-size: 2rem;
+  color: var(--siena-tostado);
+  margin-bottom: 1rem;
+}
+.hero-banner__desc {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+.hero-banner__cta {
+  display: inline-block;
+  background-color: var(--vara-de-oro);
+  color: white;
+  font-weight: bold;
+  padding: 0.9rem 2rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  box-shadow: 0 2px 8px rgba(212, 164, 55, 0.13);
+  transition: background 0.3s, transform 0.2s;
+  text-decoration: none;
+}
+.hero-banner__cta:hover {
+  background-color: var(--siena-tostado);
+  transform: scale(1.05);
+}
+@media (min-width: 700px) {
+  .hero-banner__container {
+    flex-direction: row;
+    max-width: 1100px;
+    gap: 3rem;
+    padding: 3rem 2rem;
+  }
+  .hero-banner__img {
+    flex: 1;
+    max-width: 480px;
+  }
+  .hero-banner__img img {
+    max-width: 420px;
+  }
+  .hero-banner__content {
+    flex: 1;
+    text-align: left;
+    padding-left: 2rem;
+  }
+  .hero-banner__title {
+    font-size: 2.5rem;
+  }
+  .hero-banner__desc {
+    font-size: 1.2rem;
+  }
+}
+@media (min-width: 1100px) {
+  .hero-banner__container {
+    max-width: 1400px;
+    gap: 5rem;
+    padding: 4rem 2rem;
+  }
+  .hero-banner__img img {
+    max-width: 520px;
+  }
+  .hero-banner__title {
+    font-size: 3rem;
+  }
+}
+
 @media (min-width: 600px) {
   .grid-productos {
     grid-template-columns: repeat(2, 1fr);
-  }
-  .logo-mobile {
-    width: 120px;
-  }
-  .header-mobile {
-    padding: 1rem 2rem;
   }
   .footer-mobile {
     padding: 2rem 0.5rem 2.5rem 0.5rem;
@@ -336,12 +450,6 @@ main {
 @media (min-width: 900px) {
   .grid-productos {
     grid-template-columns: repeat(4, 1fr);
-  }
-  .logo-mobile {
-    width: 140px;
-  }
-  header {
-    padding: 1rem 2rem;
   }
   .footer-mobile {
     padding: 1.2rem 0.5rem 1.2rem 0.5rem;
