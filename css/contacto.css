@@ -25,7 +25,8 @@
     font-family: var(--font-primary)
 }
 
-/*Header y nav*/
+/*
+    Header y nav (ya estan en inicio.css)
 nav{
     display:flex ;
     justify-content: space-between;
@@ -41,6 +42,8 @@ ul{
     margin: 20px;
     
 }
+*/
+
 .logo{
     width: 140px;
     height: auto;
