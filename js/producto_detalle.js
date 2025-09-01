@@ -1,5 +1,7 @@
 import { productos } from './catalogo_productos.js';
+import { agregarAlCarrito } from './carrito.js';
 
+// Función para obtener el parámetro 'id' de la URL
 function getQueryParam(param) {
     return new URLSearchParams(window.location.search).get(param);
 }
@@ -28,14 +30,16 @@ function renderProductoDetalle(producto) {
     }
 }
 
-//Carga producto x id
 document.addEventListener('DOMContentLoaded', () => {
     const id = parseInt(getQueryParam('id'));
     const producto = productos.find(p => p.id === id);
-    if (producto) {
-    renderProductoDetalle(producto);
-    } else {
-        document.querySelector('main').innerHTML = `<p style="text-align:center; margin-top:2rem;">Producto no encontrado.</p>`;
-    }
+    if (producto) renderProductoDetalle(producto);
 
+    // Botón "Agregar al carrito"
+    const botonAgregar = document.querySelector('.add-to-cart');
+    if (botonAgregar) {
+        botonAgregar.addEventListener('click', () => {
+            agregarAlCarrito(1);
+        });
+    }
 });
