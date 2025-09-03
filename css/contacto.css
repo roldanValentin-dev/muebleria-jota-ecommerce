@@ -25,24 +25,6 @@
     font-family: var(--font-primary)
 }
 
-/*
-    Header y nav (ya estan en inicio.css)
-nav{
-    display:flex ;
-    justify-content: space-between;
-    font-size: 20px;
-    align-items: center;
-    background-color: var(--verde-salvia);
-}
-
-ul{
-    display: flex;
-    list-style: none;
-    gap: 10px;
-    margin: 20px;
-    
-}
-*/
 
 .logo{
     width: 140px;
@@ -160,4 +142,49 @@ input {
     cursor: pointer;
     border: none;
     background-color: rgb(255, 255, 255);
+}
+ 
+/*media querys*/
+@media (max-width: 768px) {
+    main {
+        margin: 20px;
+    }
+
+    .content-form {
+        padding: 20px;
+    }
+
+    .content-form h1 {
+        font-size: 1.8rem;
+        margin: 20px;
+    }
+
+    input,
+    #mensaje {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    #btn-form {
+        width: 120px;
+        height: 40px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .content-form h1 {
+        font-size: 1.5rem;
+    }
+
+    input,
+    #mensaje {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    #btn-form {
+        width: 100px;
+        height: 35px;
+    }
 }
