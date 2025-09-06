@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contacto</title>
-  <link rel="stylesheet" href="./css/contacto.css">
-  <link rel="stylesheet" href="css/inicio.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-  <link rel="stylesheet" href="css/carrito.css">
-
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacto</title>
+    <link rel="stylesheet" href="./css/contacto.css" />
+    <link rel="stylesheet" href="css/inicio.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/carrito.css" />
+    <link rel="icon" href="assets/logo.svg" />
+  </head>
   <body>
     <header class="header-mobile">
       <div class="header-left">
@@ -26,7 +28,13 @@
         </nav>
       </div>
       <div class="header-center">
-        <img src="assets/logo.svg" alt="Logo Mublería Hermanos Jota" class="logo-mobile" />
+        <a href="index.html" class="logo">
+          <img
+            src="assets/logo.svg"
+            alt="Logo Mublería Hermanos Jota"
+            class="logo-mobile"
+          />
+        </a>
       </div>
       <div class="carrito">
         <i class="fa-solid fa-cart-shopping"></i>
@@ -37,13 +45,31 @@
       <div class="content-form">
         <h1>Contactate con nosotros</h1>
         <form action="submit" class="form">
-          <input type="text" id="Nombre" required placeholder="Nombre" minlength="2">
+          <input
+            type="text"
+            id="Nombre"
+            required
+            placeholder="Nombre"
+            minlength="2"
+          />
 
-          <input type="email" name="Email" id="Email" required placeholder="Email"
-            >
+          <input
+            type="email"
+            name="Email"
+            id="Email"
+            required
+            placeholder="Email"
+          />
 
-          <textarea name="mensaje" id="mensaje" required placeholder="Mensaje" rows="6" cols="50"
-            minlength="5"></textarea>
+          <textarea
+            name="mensaje"
+            id="mensaje"
+            required
+            placeholder="Mensaje"
+            rows="6"
+            cols="50"
+            minlength="5"
+          ></textarea>
 
           <button type="submit" id="btn-form">Enviar</button>
         </form>
@@ -68,23 +94,29 @@
         <div class="footer-contacto">
           <strong>Contacto</strong><br />
           Sitio web:
-          <a href="https://www.hermanosjota.com.ar" target="_blank">www.hermanosjota.com.ar</a><br />
+          <a href="https://www.hermanosjota.com.ar" target="_blank"
+            >www.hermanosjota.com.ar</a
+          ><br />
           Email general:
-          <a href="mailto:info@hermanosjota.com.ar">info@hermanosjota.com.ar</a><br />
+          <a href="mailto:info@hermanosjota.com.ar">info@hermanosjota.com.ar</a
+          ><br />
           Ventas:
-          <a href="mailto:ventas@hermanosjota.com.ar">ventas@hermanosjota.com.ar</a><br />
+          <a href="mailto:ventas@hermanosjota.com.ar"
+            >ventas@hermanosjota.com.ar</a
+          ><br />
           Instagram:
-          <a href="https://instagram.com/hermanosjota_ba" target="_blank">@hermanosjota_ba</a><br />
+          <a href="https://instagram.com/hermanosjota_ba" target="_blank"
+            >@hermanosjota_ba</a
+          ><br />
           WhatsApp:
-          <a href="https://wa.me/541145678900" target="_blank">+54 11 4567-8900</a><br />
+          <a href="https://wa.me/541145678900" target="_blank"
+            >+54 11 4567-8900</a
+          ><br />
         </div>
       </div>
     </footer>
     <script src="js/menu.js"></script>
     <script src="js/contacto.js"></script>
     <script type="module" src="js/carrito.js"></script>
-
-
   </body>
-
 </html>
