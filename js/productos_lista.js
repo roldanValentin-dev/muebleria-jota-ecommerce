@@ -1,16 +1,11 @@
-import { productos } from './catalogo_productos.js';
-
 const productsContainer = document.querySelector('#productsContainer');
 const searchInput = document.querySelector('.search-input');
+const url = 'catalogo_productos.json';
 
-function fetchProductos() {
-    return new Promise(resolve => {
-        setTimeout(() => resolve(productos), 500); // medio segundo de delay
-    });
-}
+let lista = [];
 
 function renderProductos(lista) {
-    productsContainer.innerHTML = ''; // para que funcione la barra buscadora
+    productsContainer.innerHTML = ''; 
     lista.forEach(producto => {
         const article = document.createElement('article');
         article.className = 'product-card';
@@ -25,14 +20,23 @@ function renderProductos(lista) {
     });
 }
 
-
 searchInput.addEventListener('input', (e) => {
     const term = e.target.value.toLowerCase();
-    const filtered = productos.filter(p => p.nombre.toLowerCase().includes(term));
+    const filtered = lista.filter(p => p.nombre.toLowerCase().includes(term));
     renderProductos(filtered);
 });
 
-document.addEventListener('DOMContentLoaded', async () => {
-    const lista = await fetchProductos();
-    renderProductos(lista);
-});
+async function cargarProductos(){
+    try {
+        const res = await fetch(url);
+        if (!res.ok){
+            throw new Error(`Error HTTP: ${res.status}`);
+        }
+        lista = await res.json();
+        renderProductos(lista);
+    } catch(error) {
+        console.log('No se pudo obtener el producto: ', error);
+    }
+}
+
+cargarProductos();
