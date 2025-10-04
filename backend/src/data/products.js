@@ -2,7 +2,7 @@ export const products = [
   {
     id: 1,
     nombre: "Aparador Uspallata",
-    imagen: "assets/products/aparador-uspallata.png",
+    imagen: "aparador-uspallata.png",
     descripcion:
       "Aparador de seis puertas fabricado en nogal sostenible con tiradores metálicos en acabado latón. Su silueta minimalista realza el veteado natural de la madera, creando una pieza que combina funcionalidad y elegancia atemporal para espacios contemporáneos.",
     medidas: "180 × 45 × 75 cm",
@@ -15,7 +15,7 @@ export const products = [
   {
     id: 2,
     nombre: "Biblioteca Recoleta",
-    imagen: "assets/products/biblioteca-recoleta.png",
+    imagen: "biblioteca-recoleta.png",
     descripcion:
       "Sistema modular de estantes abierto que combina estructura de acero Sage Green y repisas en roble claro. Perfecta para colecciones y objetos de diseño, su diseño versátil se adapta a cualquier espacio contemporáneo con elegancia funcional.",
     medidas: "100 × 35 × 200 cm",
@@ -28,7 +28,7 @@ export const products = [
   {
     id: 3,
     nombre: "Butaca Mendoza",
-    imagen: "assets/products/butaca-mendoza.png",
+    imagen: "butaca-mendoza.png",
     descripcion:
       "Butaca tapizada en bouclé Dusty Rose con base de madera de guatambú. El respaldo curvo abraza el cuerpo y ofrece máximo confort, mientras que su diseño orgánico aporta calidez y sofisticación a cualquier ambiente contemporáneo.",
     medidas: "80 × 75 × 85 cm",
@@ -41,7 +41,7 @@ export const products = [
   {
     id: 4,
     nombre: "Sillón Copacabana",
-    imagen: "assets/products/sillón-copacabana.png",
+    imagen: "sillon-copacabana.png",
     descripcion:
       "Sillón lounge en cuero cognac con base giratoria en acero Burnt Sienna. Inspirado en la estética brasilera moderna de los 60, combina comodidad excepcional con un diseño icónico que trasciende tendencias y épocas.",
     medidas: "90 × 85 × 95 cm",
@@ -54,7 +54,7 @@ export const products = [
   {
     id: 5,
     nombre: "Mesa de Centro Araucaria",
-    imagen: "assets/products/mesa-de-centro-araucaria.png",
+    imagen: "mesa-de-centro-araucaria.png",
     descripcion:
       "Mesa de centro con sobre circular de mármol Patagonia y base de tres patas en madera de nogal. Su diseño minimalista se convierte en el punto focal perfecto para cualquier sala de estar contemporánea, combinando la frialdad del mármol con la calidez de la madera.",
     medidas: "90 × 90 × 45 cm",
@@ -67,7 +67,7 @@ export const products = [
   {
     id: 6,
     nombre: "Mesa de Noche Aconcagua",
-    imagen: "assets/products/mesa-de-noche-aconcagua.png",
+    imagen: "mesa-de-noche-aconcagua.png",
     descripcion:
       "Mesa de noche con cajón oculto y repisa inferior en roble certificado FSC®. Su diseño limpio y funcional permite convivir con diferentes estilos de dormitorio, ofreciendo almacenamiento discreto y elegante para objetos personales.",
     medidas: "45 × 35 × 60 cm",
@@ -80,7 +80,7 @@ export const products = [
   {
     id: 7,
     nombre: "Cama Neuquén",
-    imagen: "assets/products/cama-neuquén.png",
+    imagen: "cama-neuquen.png",
     descripcion:
       "(No hay imagenes de Cama Neuquén) Cama plataforma con cabecero flotante tapizado en lino natural y estructura de madera maciza. Su diseño minimalista y sofisticado crea un ambiente de serenidad y elegancia, perfecto para dormitorios contemporáneos que buscan paz y simplicidad.",
     medidas: "160 × 200 × 90 cm",
@@ -93,7 +93,7 @@ export const products = [
   {
     id: 8,
     nombre: "Sofá Patagonia",
-    imagen: "assets/products/sofá-patagonia.png",
+    imagen: "sofa-patagonia.png",
     descripcion:
       "Sofá de tres cuerpos tapizado en lino Warm Alabaster con patas cónicas de madera. Los cojines combinan espuma de alta resiliencia con plumón reciclado, ofreciendo comodidad duradera y sostenible para el hogar moderno.",
     medidas: "220 × 90 × 80 cm",
@@ -106,7 +106,7 @@ export const products = [
   {
     id: 9,
     nombre: "Mesa Comedor Pampa",
-    imagen: "assets/products/mesa-comedor-pampa.png",
+    imagen: "mesa-comedor-pampa.png",
     descripcion:
       "Mesa extensible de roble macizo con tablero biselado y sistema de apertura suave. Su diseño robusto y elegante se adapta perfectamente a reuniones íntimas o grandes celebraciones familiares, extendiéndose de 6 a 10 comensales.",
     medidas: "160-240 × 90 × 75 cm",
@@ -119,7 +119,7 @@ export const products = [
   {
     id: 10,
     nombre: "Sillas Córdoba",
-    imagen: "assets/products/sillas-córdoba.png",
+    imagen: "sillas-cordoba.png",
     descripcion:
       "Set de cuatro sillas apilables en contrachapado moldeado de nogal y estructura tubular pintada en Sage Green. Su diseño ergonómico y materiales de calidad garantizan comodidad y durabilidad en el uso diario, perfectas para comedores contemporáneos.",
     medidas: "45 × 52 × 80 cm (cada una)",
@@ -132,7 +132,7 @@ export const products = [
   {
     id: 11,
     nombre: "Escritorio Costa",
-    imagen: "assets/products/escritorio-costa.png",
+    imagen: "escritorio-costa.png",
     descripcion:
       "Escritorio compacto con cajón organizado y tapa pasacables integrada en bambú laminado. Ideal para espacios de trabajo en casa, combina funcionalidad moderna con estética minimalista y sostenible, perfecto para el trabajo remoto.",
     medidas: "120 × 60 × 75 cm",
@@ -145,7 +145,7 @@ export const products = [
   {
     id: 12,
     nombre: "Silla de Trabajo Belgrano",
-    imagen: "assets/products/silla-de-trabajo-belgrano.png",
+    imagen: "silla-de-trabajo-belgrano.png",
     descripcion:
       "Silla ergonómica regulable en altura con respaldo de malla transpirable y asiento tapizado en tejido reciclado. Diseñada para largas jornadas de trabajo con máximo confort y apoyo lumbar, ideal para oficinas en casa y espacios de coworking.",
     medidas: "60 × 60 × 90-100 cm",
