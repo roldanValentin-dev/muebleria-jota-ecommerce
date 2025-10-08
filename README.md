@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./assets/logo.svg" alt="Mueblería Hermanos Jota" width="200"/>
+  <img src="./client/public/assets/logo.svg" alt="Mueblería Hermanos Jota" width="200"/>
   
   # 🛋️ E-Commerce — Mueblería Hermanos Jota
   
