@@ -1,49 +1,44 @@
-// client/src/components/Navbar.jsx
-import { useState } from 'react';
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { FaShoppingCart } from "react-icons/fa";
 
-// Recibimos la prop cartItemCount
 function Navbar({ cartItemCount }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // BORRAMOS la línea: const cartItemCount = 0;
-  // Ya no es necesaria, porque el valor viene de las props.
-
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
+  const toggleMenu = () => { setMenuOpen(!menuOpen); };
+  const closeMenu = () => { setMenuOpen(false); };
 
   return (
-    <header className="main-header">
-      <div className="logo-container">
-        <img src="/assets/logo.svg" alt="Logo Mueblería Jota" className="logo" />
+    <header className="header">
+      <button className={`menu-toggle ${menuOpen ? 'active' : ''}`} onClick={toggleMenu}>
+        <span className="menu-toggle__icon"></span>
+      </button>
+      <div className="header__logo">
+        <img src="/assets/logo.svg" alt="Logo Muebleria Jota" />
       </div>
-      <nav className="nav-desktop">
-        <ul>
-          <li><a href="#">Inicio</a></li>
-          <li><a href="#">Productos</a></li>
-          <li><a href="#">Contacto</a></li>
+      <nav className="nav">
+        <ul className="nav__list">
+          <li className="nav__item"><Link to="/" className="nav__link">Inicio</Link></li>
+          <li className="nav__item"><Link to="/productos" className="nav__link">Productos</Link></li>
+          <li className="nav__item"><Link to="/contacto" className="nav__link">Contacto</Link></li>
+          <li className="nav__item"><Link to="/admin/crear-producto" className="nav__link">Admin</Link></li>
         </ul>
       </nav>
-      <div className="header-right">
-        <div className="carrito">
-          🛒 <span id="contador-carrito">{cartItemCount}</span>
+      <div className="header__actions">
+        <div className="header__cart">
+          <FaShoppingCart />
+          <span className="header__cart-count">{cartItemCount}</span>
         </div>
-        <button 
-          className={`menu-toggle ${menuOpen ? 'active' : ''}`} 
-          onClick={toggleMenu}
-        >
-          <div className="hamburger"></div>
-        </button>
       </div>
-      <nav className={`nav-mobile ${menuOpen ? 'active' : ''}`}>
-        <ul>
-          <li><a href="#">Inicio</a></li>
-          <li><a href="#">Productos</a></li>
-          <li><a href="#">Contacto</a></li>
+      <nav className={`nav--mobile ${menuOpen ? 'active' : ''}`}>
+        <ul className="nav__list">
+          <li className="nav__item"><Link to="/" onClick={closeMenu} className="nav__link">Inicio</Link></li>
+          <li className="nav__item"><Link to="/productos" onClick={closeMenu} className="nav__link">Productos</Link></li>
+          <li className="nav__item"><Link to="/contacto" onClick={closeMenu} className="nav__link">Contacto</Link></li>
+          <li className="nav__item"><Link to="/admin/crear-producto" onClick={closeMenu} className="nav__link">Admin</Link></li>
         </ul>
       </nav>
     </header>
   );
 }
-
 export default Navbar;

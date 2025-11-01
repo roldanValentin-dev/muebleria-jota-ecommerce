@@ -1,16 +1,14 @@
-// client/src/components/ProductCard.jsx
+import { API_URL } from '../config/api';
 
-// Recibimos la nueva prop 'onCardClick'
 function ProductCard({ product, onCardClick }) {
-     const imageUrl = `http://localhost:2000/images/${product.imagen}`
+  const imageUrl = `${API_URL}/images/${product.imagenUrl}`;
+  
   return (
-    // Envolvemos la tarjeta en un div que escucha el evento onClick
     <div className="product-card" onClick={() => onCardClick(product)}>
-      <img src={imageUrl} alt={product.nombre} />
-      <h3>{product.nombre}</h3>
-      <p className="precio">${product.precio}</p>
-      {/* El botón ya no hace nada, el clic es en toda la tarjeta */}
-      <button className="btn-secondary">Ver detalle</button>
+      <img src={imageUrl} alt={product.nombre} className="product-card__image" />
+      <h3 className="product-card__title">{product.nombre}</h3>
+      <p className="product-card__price">${product.precio}</p>
+      <button className="btn btn--secondary">Ver detalle</button>
     </div>
   );
 }
