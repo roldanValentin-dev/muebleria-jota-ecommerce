@@ -1,8 +1,3 @@
-// client/src/components/ContactForm.jsx
-
-
-// esta parte la hice con IA por que no tenia idea de como hacerlo xD
-
 import { useState } from 'react';
 
 function ContactForm() {
@@ -23,50 +18,58 @@ function ContactForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Datos del formulario:', formData); // Requisito: console.log
+    console.log('Datos del formulario:', formData);
     setSubmitted(true);
   };
 
   if (submitted) {
-    return <h3 className="form-success">¡Gracias por tu mensaje! Nos pondremos en contacto pronto.</h3>;
+    return <h3 className="form__success">¡Gracias por tu mensaje! Nos pondremos en contacto pronto.</h3>;
   }
 
   return (
-    <form onSubmit={handleSubmit} className="contact-form">
-      <h2>Contacto</h2>
-      <div className="form-group">
-        <label htmlFor="nombre">Nombre</label>
-        <input 
-          type="text" 
+    <form onSubmit={handleSubmit} className="form">
+      <h2 className="title title--secondary">Contacto</h2>
+      <div className="form__group">
+        <label htmlFor="nombre" className="form__label">Nombre</label>
+        <input
+          type="text"
           id="nombre"
-          name="nombre" 
+          name="nombre"
           value={formData.nombre}
           onChange={handleChange}
-          required 
+          autoComplete="name"
+          required
+          className="form__input"
         />
       </div>
-      <div className="form-group">
-        <label htmlFor="email">Email</label>
-        <input 
-          type="email" 
+      <div className="form__group">
+        <label htmlFor="email" className="form__label">Email</label>
+        <input
+          type="email"
           id="email"
-          name="email" 
+          name="email"
           value={formData.email}
           onChange={handleChange}
-          required 
+          autoComplete="email"
+          required
+          className="form__input"
         />
       </div>
-      <div className="form-group">
-        <label htmlFor="mensaje">Mensaje</label>
-        <textarea 
+      <div className="form__group">
+        <label htmlFor="mensaje" className="form__label">Mensaje</label>
+        <textarea
           id="mensaje"
-          name="mensaje" 
+          name="mensaje"
           value={formData.mensaje}
           onChange={handleChange}
-          required 
+          autoComplete="off"
+          required
+          className="form__textarea"
         />
       </div>
-      <button type="submit" className="btn-secondary">Enviar</button>
+      <div className="form__actions">
+        <button type="submit" className="btn btn--primary">Enviar</button>
+      </div>
     </form>
   );
 }
