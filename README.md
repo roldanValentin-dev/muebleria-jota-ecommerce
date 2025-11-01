@@ -82,7 +82,34 @@
 ## 📅 Estado del proyecto
 
 <p align="center">
-  <img src="https://img.shields.io/badge/STATUS-EN%20DESARROLLO-yellow?style=for-the-badge&logo=github" />
+  <img src="https://img.shields.io/badge/STATUS-DESPLEGADO-success?style=for-the-badge&logo=vercel" />
 </p>
 
-📦 **Primera versión disponible pronto**
+---
+
+## 🌐 Demo en Vivo
+
+- **🖥️ Frontend:** [https://muebleria-jota-ecommerce.vercel.app/](https://muebleria-jota-ecommerce.vercel.app/)
+- **⚙️ Backend API:** [https://muebleria-jota-ecommerce-6anh.onrender.com/api/productos](https://muebleria-jota-ecommerce-6anh.onrender.com/api/productos)
+
+> **Nota:** El backend está en un plan gratuito de Render, por lo que puede tardar 30-60 segundos en responder la primera vez (cold start).
+
+---
+
+## 🚀 Instalación Local
+
+### Backend
+```bash
+cd backend
+npm install
+# Crear archivo .env con MONGODB_URI, PORT y NODE_ENV
+npm run dev
+```
+
+### Frontend
+```bash
+cd client
+npm install
+# Crear archivo .env con VITE_API_URL
+npm run dev
+```
