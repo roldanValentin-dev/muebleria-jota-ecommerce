@@ -33,8 +33,6 @@ const publicPath = path.join(__dirname, '..', 'public');
 // LÍNEA ESPÍA: Esto imprimirá la ruta absoluta en la consola del backend.
 console.log(`[DEBUG] El servidor está sirviendo archivos estáticos desde: ${publicPath}`);
 
-app.use(express.static(publicPath));
-
 // --- Ruta de Bienvenida ---
 app.get('/', (req, res) => {
   res.json({
