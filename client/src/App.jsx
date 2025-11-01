@@ -51,7 +51,10 @@ function App() {
   if (error) return <div>Error: {error}</div>;
   return (
     <>
+    <header>
       <Navbar cartItemCount={cart.length} />
+    </header>
+      
       <main>
         <h1>Mueblería Jota</h1>
         <h2>Catálogo de Productos</h2>

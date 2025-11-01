@@ -1,8 +1,14 @@
-import app from './app.js'; 
+import app from './app.js';
+import 'dotenv/config';
+import { connectDB } from './config/database.js';
 
-const PORT = 2000;
+const PORT = process.env.PORT || 2000;
 
-// Inicia el servidor
-app.listen(PORT, () => {
-  console.log(`Servidor escuchando en http://localhost:${PORT}`);
-});
+const startServer = async ()=>{
+  await connectDB();
+  app.listen(PORT, ()=>{
+    console.log(`servidor ecuchando en http://localhost:${PORT}`);
+  })
+}
+
+startServer();
