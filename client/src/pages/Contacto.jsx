@@ -4,7 +4,7 @@ import ContactForm from '../components/ContactForm';
 function Contacto() {
   return (
     <>
-      <div className="container">
+      <div className="container" style={{ animation: 'fadeIn 0.5s' }}>
         <div className="contact">
           <div className="contact__info">
             <h1 className="title title--primary">Contáctanos</h1>
