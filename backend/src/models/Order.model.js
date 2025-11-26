@@ -19,6 +19,21 @@ const orderSchema = new mongoose.Schema({
       default: 1
     }
   }],
+  subtotal: {
+    type: Number,
+    default: function() {
+      return this.total;
+    }
+  },
+  descuento: {
+    porcentaje: { type: Number, default: 0 },
+    monto: { type: Number, default: 0 },
+    codigoCupon: { type: String, default: null }
+  },
+  envio: {
+    provincia: { type: String, default: null },
+    costo: { type: Number, default: 0 }
+  },
   total: {
     type: Number,
     required: true

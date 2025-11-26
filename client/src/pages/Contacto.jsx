@@ -4,11 +4,11 @@ import ContactForm from '../components/ContactForm';
 function Contacto() {
   return (
     <>
-      <div className="container" style={{ animation: 'fadeIn 0.5s' }}>
+      <div className="container fadeIn-animation">
         <div className="contact">
           <div className="contact__info">
             <h1 className="title title--primary">Contáctanos</h1>
-            <p style={{ marginBottom: '2rem' }}>Estamos aquí para ayudarte. Si tienes alguna pregunta sobre nuestros productos, envíos o cualquier otra consulta, no dudes en contactarnos.</p>
+            <p className="contacto-intro">Estamos aquí para ayudarte. Si tienes alguna pregunta sobre nuestros productos, envíos o cualquier otra consulta, no dudes en contactarnos.</p>
 
             <div className="contact__item">
               <h3 className="contact__item-title"><MdLocationOn /> Dirección</h3>

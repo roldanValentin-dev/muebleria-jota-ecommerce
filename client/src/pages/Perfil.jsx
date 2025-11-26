@@ -1,7 +1,25 @@
 import { useAuth } from '../context/AuthContext';
+import { useNavigate } from 'react-router-dom';
+import { FaEdit } from 'react-icons/fa';
+import Swal from 'sweetalert2';
 
 function Perfil() {
-  const { user } = useAuth();
+  const { user, logout } = useAuth();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    Swal.fire({
+      title: 'Cerrando sesión...',
+      text: 'Hasta pronto!',
+      icon: 'success',
+      timer: 1500,
+      showConfirmButton: false
+    }).then(() => {
+      logout();
+      navigate('/');
+      window.location.reload();
+    });
+  };
 
   return (
     <div className="perfil-container">
@@ -24,6 +42,15 @@ function Perfil() {
             {user?.createdAt ? new Date(user.createdAt).toLocaleDateString('es-AR') : 'N/A'}
           </p>
         </div>
+      </div>
+
+      <div className="perfil-actions">
+        <button onClick={() => navigate('/editar-perfil')} className="btn btn--primary">
+          <FaEdit /> Editar Perfil
+        </button>
+        <button onClick={handleLogout} className="btn btn--secondary">
+          Cerrar Sesión
+        </button>
       </div>
     </div>
   );

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
 import api from '../config/api';
+import Swal from 'sweetalert2';
 
 function MisPedidos() {
   const { token } = useAuth();
@@ -23,6 +24,82 @@ function MisPedidos() {
       fetchPedidos();
     }
   }, [token]);
+
+  const handleCancelarPedido = async (pedidoId) => {
+    const result = await Swal.fire({
+      title: '¿Cancelar pedido?',
+      text: 'Esta acción devolverá el stock de los productos',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#dc3545',
+      cancelButtonColor: '#87a96b',
+      confirmButtonText: 'Sí, cancelar',
+      cancelButtonText: 'No'
+    });
+
+    if (result.isConfirmed) {
+      try {
+        await api.patch(`/api/orders/${pedidoId}/cancelar`);
+        
+        // Actualizar lista de pedidos
+        setPedidos(pedidos.map(p => 
+          p._id === pedidoId ? { ...p, estado: 'cancelado' } : p
+        ));
+
+        Swal.fire({
+          icon: 'success',
+          title: 'Pedido cancelado',
+          text: 'El pedido ha sido cancelado exitosamente',
+          timer: 2000,
+          showConfirmButton: false
+        });
+      } catch (error) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: error.response?.data?.message || 'Error al cancelar el pedido',
+          confirmButtonColor: '#87a96b'
+        });
+      }
+    }
+  };
+
+  const handleEliminarPedido = async (pedidoId) => {
+    const result = await Swal.fire({
+      title: '¿Eliminar pedido?',
+      text: 'Esta acción no se puede deshacer',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#dc3545',
+      cancelButtonColor: '#87a96b',
+      confirmButtonText: 'Sí, eliminar',
+      cancelButtonText: 'No'
+    });
+
+    if (result.isConfirmed) {
+      try {
+        await api.delete(`/api/orders/${pedidoId}`);
+        
+        // Remover de la lista
+        setPedidos(pedidos.filter(p => p._id !== pedidoId));
+
+        Swal.fire({
+          icon: 'success',
+          title: 'Pedido eliminado',
+          text: 'El pedido ha sido eliminado exitosamente',
+          timer: 2000,
+          showConfirmButton: false
+        });
+      } catch (error) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: error.response?.data?.message || 'Error al eliminar el pedido',
+          confirmButtonColor: '#87a96b'
+        });
+      }
+    }
+  };
 
   if (loading) {
     return <div className="loading">Cargando pedidos</div>;
@@ -67,6 +144,25 @@ function MisPedidos() {
                     </span>
                   </div>
                 ))}
+                
+                <div className="pedido-producto-item pedido-subtotal">
+                  <span>Subtotal:</span>
+                  <span>${pedido.subtotal?.toLocaleString() || pedido.total.toLocaleString()}</span>
+                </div>
+                
+                {pedido.descuento?.monto > 0 && (
+                  <div className="pedido-producto-item pedido-descuento">
+                    <span>Descuento ({pedido.descuento.porcentaje}% - {pedido.descuento.codigoCupon}):</span>
+                    <span>-${pedido.descuento.monto.toLocaleString()}</span>
+                  </div>
+                )}
+                
+                {pedido.envio?.costo > 0 && (
+                  <div className="pedido-producto-item">
+                    <span>Envío ({pedido.envio.provincia}):</span>
+                    <span>${pedido.envio.costo.toLocaleString()}</span>
+                  </div>
+                )}
               </div>
 
               <div className="pedido-total">
@@ -75,6 +171,26 @@ function MisPedidos() {
                   ${pedido.total.toLocaleString()}
                 </span>
               </div>
+
+              {pedido.estado === 'cancelado' ? (
+                <div className="perfil-actions-single">
+                  <button 
+                    onClick={() => handleEliminarPedido(pedido._id)}
+                    className="btn btn--danger"
+                  >
+                    Eliminar Pedido
+                  </button>
+                </div>
+              ) : pedido.estado !== 'completado' && (
+                <div className="perfil-actions-single">
+                  <button 
+                    onClick={() => handleCancelarPedido(pedido._id)}
+                    className="btn btn--danger"
+                  >
+                    Cancelar Pedido
+                  </button>
+                </div>
+              )}
             </div>
           ))}
         </div>
