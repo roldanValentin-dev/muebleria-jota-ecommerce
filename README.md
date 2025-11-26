@@ -54,28 +54,35 @@
 
 ---
 
-## ✨ Características principales
+## ✨ Funcionalidades Implementadas
 
-- ✅ Catálogo de productos con filtros dinámicos
-- ✅ Carrito de compras en tiempo real
-- ✅ Gestión de stock y panel de administración
-- ✅ Diseño **responsive** y atractivo
+### Funcionalidades Básicas (Requeridas)
+- ✅ **Catálogo de productos** con filtros por categoría, precio y búsqueda
+- ✅ **Carrito de compras** con control de cantidad y persistencia
+- ✅ **Sistema de autenticación** (registro, login, JWT)
+- ✅ **Gestión de pedidos** (crear, ver historial, cancelar)
+- ✅ **Panel de administración** con roles (cliente/admin)
+- ✅ **CRUD de productos** (solo admin)
+- ✅ **Gestión de stock** automática
+- ✅ **Diseño responsive** (mobile-first)
+
+### Funcionalidades Extra (Plus)
+- ⭐ **Sistema de favoritos** con persistencia en BD
+- ⭐ **Sistema de cupones** con validación y descuentos
+- ⭐ **Cálculo de envío** por provincia
+- ⭐ **Perfil de usuario** editable (nombre, email, contraseña)
+- ⭐ **Skeletons de carga** con animaciones
+- ⭐ **Página 404** personalizada
+- ⭐ **Rate limiting** en autenticación (seguridad)
+- ⭐ **Accesibilidad** (ARIA labels, autocomplete)
+- ⭐ **Estadísticas** en panel admin (productos, pedidos, ingresos)
+- ⭐ **Gestión de estados de pedidos** (pendiente, procesando, completado, cancelado)
 
 ---
 
-## 📸 Vista previa
-
-> _(Aquí podrás ver imágenes o GIFs de la aplicación en funcionamiento próximamente)_
-
----
-
-## 💻 Equipo de desarrollo
+## 💻 Desarrollado por
 
 - [Valentín Roldán](https://github.com/roldanValentin-dev)
-- [Tomás Cielli](https://github.com/TomasCielli)
-- [Santiago Vittori](https://github.com/vittorisantiago)
-- [Matías Páez](https://github.com/Matias-Paez)
-- [Gabriel Valdez](https://github.com/gv1887)
 
 ---
 
@@ -98,18 +105,125 @@
 
 ## 🚀 Instalación Local
 
-### Backend
+### Requisitos Previos
+- Node.js (v16 o superior)
+- MongoDB (local o Atlas)
+- npm o yarn
+
+### 1. Clonar el repositorio
+```bash
+git clone https://github.com/roldanValentin-dev/muebleria-jota-ecommerce.git
+cd muebleria-jota-ecommerce
+```
+
+### 2. Configurar Backend
 ```bash
 cd backend
 npm install
-# Crear archivo .env con MONGODB_URI, PORT y NODE_ENV
+```
+
+Crear archivo `.env` en la carpeta `backend`:
+```env
+MONGODB_URI=tu_uri_de_mongodb
+PORT=2000
+NODE_ENV=development
+JWT_SECRET=tu_secreto_jwt
+FRONTEND_URL=http://localhost:5173
+```
+
+Iniciar servidor:
+```bash
 npm run dev
+```
+
+### 3. Configurar Frontend
+```bash
+cd client
+npm install
+```
+
+Crear archivo `.env` en la carpeta `client`:
+```env
+VITE_API_URL=http://localhost:2000
+```
+
+Iniciar aplicación:
+```bash
+npm run dev
+```
+
+### 4. Poblar Base de Datos (Opcional)
+```bash
+cd backend
+npm run seed:products
+npm run seed:coupons
+```
+
+### 5. Crear Usuario Administrador
+
+Edita `backend/src/scripts/createAdmin.js` con el email del usuario que quieres promover a admin y ejecuta:
+```bash
+cd backend
+npm run create:admin
+```
+
+---
+
+## 👤 Credenciales de Prueba
+
+### Usuario Admin
+- **Email:** admin@gmail.com
+- **Contraseña:** admin123
+
+### Cupones Disponibles
+- `JOTA10` - 10% de descuento
+- `JOTA20` - 20% de descuento
+- `PRIMERACOMPRA` - 15% de descuento
+- `VERANO2025` - 25% de descuento (expira 31/12/2025)
+
+---
+
+## 📚 Estructura del Proyecto
+
+```
+muebleria-jota-ecommerce/
+├── backend/
+│   ├── src/
+│   │   ├── controllers/
+│   │   ├── models/
+│   │   ├── routes/
+│   │   ├── middlewares/
+│   │   ├── scripts/
+│   │   └── app.js
+│   └── package.json
+│
+├── client/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── context/
+│   │   ├── pages/
+│   │   ├── config/
+│   │   └── App.jsx
+│   └── package.json
+│
+└── README.md
+```
+
+---
+
+## 🛠️ Scripts Disponibles
+
+### Backend
+```bash
+npm run dev          # Iniciar servidor en modo desarrollo
+npm run seed:products # Poblar productos
+npm run seed:coupons  # Poblar cupones y tarifas de envío
+npm run create:admin  # Crear usuario administrador
 ```
 
 ### Frontend
 ```bash
-cd client
-npm install
-# Crear archivo .env con VITE_API_URL
-npm run dev
+npm run dev          # Iniciar aplicación en modo desarrollo
+npm run build        # Compilar para producción
+npm run preview      # Vista previa de producción
 ```

@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { useAuth } from '../context/AuthContext';
 import api from '../config/api';
@@ -9,7 +9,20 @@ function Checkout() {
   const { cart, getTotal, clearCart } = useCart();
   const { token } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
   const [loading, setLoading] = useState(false);
+  
+  const descuento = location.state?.descuento;
+  const envio = location.state?.envio;
+  
+  const subtotal = getTotal();
+  const montoDescuento = descuento?.monto || 0;
+  const costoEnvio = envio?.costo || 0;
+  const totalFinal = subtotal - montoDescuento + costoEnvio;
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const handleConfirmOrder = async () => {
     setLoading(true);
@@ -20,7 +33,11 @@ function Checkout() {
         cantidad: item.cantidad
       }));
 
-      await api.post('/api/orders', { productos });
+      await api.post('/api/orders', { 
+        productos,
+        descuento,
+        envio
+      });
 
       clearCart();
 
@@ -50,7 +67,7 @@ function Checkout() {
   }
 
   return (
-    <div className="checkout-container">
+    <div className="checkout-container fadeIn-animation">
       <h1 className="title title--primary">Confirmar Pedido</h1>
 
       <div className="checkout-summary">
@@ -64,9 +81,28 @@ function Checkout() {
           </div>
         ))}
         
+        <div className="checkout-totals">
+          <div className="checkout-item">
+            <span>Subtotal:</span>
+            <span>${subtotal.toLocaleString()}</span>
+          </div>
+          {descuento && (
+            <div className="checkout-item pedido-descuento">
+              <span>Descuento ({descuento.porcentaje}% - {descuento.codigoCupon}):</span>
+              <span>-${montoDescuento.toLocaleString()}</span>
+            </div>
+          )}
+          {envio && (
+            <div className="checkout-item">
+              <span>Envío ({envio.provincia}):</span>
+              <span>${costoEnvio.toLocaleString()}</span>
+            </div>
+          )}
+        </div>
+        
         <div className="checkout-total">
           <span>Total:</span>
-          <span className="checkout-total-amount">${getTotal().toLocaleString()}</span>
+          <span className="checkout-total-amount">${totalFinal.toLocaleString()}</span>
         </div>
       </div>
 

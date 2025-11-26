@@ -12,6 +12,11 @@ import rateLimit from 'express-rate-limit';
 import productosRouter from './routes/productos.routes.js';
 import authRouter from './routes/auth.routes.js';
 import ordersRouter from './routes/orders.routes.js';
+import couponRouter from './routes/coupon.routes.js';
+import shippingRouter from './routes/shipping.routes.js';
+import favoritesRouter from './routes/favorites.routes.js';
+import userRouter from './routes/user.routes.js';
+import adminRouter from './routes/admin.routes.js';
 import { notFound, errorHandler } from './middlewares/errorHandlers.js';
 
 // --- Workaround para __dirname en ES Modules ---
@@ -44,9 +49,9 @@ app.use(morgan('dev'));
 
 // --- Rate Limiting ---
 const authLimiter = rateLimit({
-  windowMs: 15 * 60 * 1000,
+  windowMs: 5 * 60 * 1000,
   max: 5,
-  message: { message: 'Demasiados intentos, intenta de nuevo en 15 minutos' }
+  message: { message: 'Demasiados intentos, intenta de nuevo en 5 minutos' }
 });
 
 // --- Servidor de Archivos Estáticos ---
@@ -58,14 +63,16 @@ console.log(`[DEBUG] El servidor está sirviendo archivos estáticos desde: ${pu
 app.get('/', (req, res) => {
   res.json({
     message: '¡Bienvenido a la API de Mueblería Jota!',
-    integrantes: [
-      'Valentin Roldan',
-      'Santiago Vittori',
-      'Tomás Cielli',
-      'Matías Páez',
-      'Gabriel Valdez',
-    ],
-    version: '1.0.0'
+    desarrollador: 'Valentín Roldán',
+    version: '1.0.0',
+    endpoints: {
+      productos: '/api/productos',
+      auth: '/api/auth',
+      pedidos: '/api/orders',
+      cupones: '/api/cupones',
+      favoritos: '/api/favoritos',
+      admin: '/api/admin'
+    }
   });
 });
 
@@ -75,6 +82,11 @@ app.use('/api/auth/login', authLimiter);
 app.use('/api/auth/register', authLimiter);
 app.use('/api/auth', authRouter);
 app.use('/api/orders', ordersRouter);
+app.use('/api/cupones', couponRouter);
+app.use('/api/envio', shippingRouter);
+app.use('/api/favoritos', favoritesRouter);
+app.use('/api/usuario', userRouter);
+app.use('/api/admin', adminRouter);
 
 // ---Manejadores de Errores ---
 app.use(notFound);

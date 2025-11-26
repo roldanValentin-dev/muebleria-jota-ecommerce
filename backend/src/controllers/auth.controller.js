@@ -23,7 +23,7 @@ export const register = async (req, res, next) => {
 
     res.status(201).json({
       token,
-      user: { id: user._id, nombre: user.nombre, email: user.email }
+      user: { id: user._id, nombre: user.nombre, email: user.email, rol: user.rol }
     });
   } catch (error) {
     next(error);
@@ -47,7 +47,7 @@ export const login = async (req, res, next) => {
 
     res.json({
       token,
-      user: { id: user._id, nombre: user.nombre, email: user.email }
+      user: { id: user._id, nombre: user.nombre, email: user.email, rol: user.rol }
     });
   } catch (error) {
     next(error);
